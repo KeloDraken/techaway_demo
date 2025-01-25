@@ -44,7 +44,7 @@ Your rights terminate automatically if you breach any terms. Upon termination, y
 ## 7. Additional Terms  
 - **No Waiver**: Failure to enforce a term does not waive future enforcement.  
 - **Severability**: If a term is invalid, the rest remain enforceable.  
-- **Governing Law**: Governed by the laws of South Africa.  
+- **Governing Law**: Governed by the laws of the Republic of South Africa.  
 
 ---
 
