@@ -1,3 +1,73 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'DMSerifText-Regular';
+    src: url('/static/assets/fonts/DMSerifText-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('/static/assets/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body {
+    @apply bg-black text-white;
+    font-family: 'Roboto-Regular', sans-serif;
+    font-weight: lighter;
+    scrollbar-width: inherit;
+    scrollbar-color: white transparent;
+}
+
+@layer utilities {
+    .bg-pricing-card {
+        background-color: #121212;
+        border-width: 1px;
+        border-color: #515151;
+    }
+
+    .divider {
+        border-bottom-width: 1px;
+        border-bottom-color: #515151;
+    }
+
+    .form-input-border {
+        border-width: 1px;
+        border-color: #515151;
+    }
+
+    .auth-panel {
+        background-color: #171717;
+    }
+
+    .bg-main {
+        background-color: #151515;
+    }
+
+    .hover\:bg-main:hover {
+        background-color: #151515;
+    }
+
+    .resizer {
+        width: 6px;
+        cursor: col-resize;
+        transition: background-color 0.3s;
+    }
+}
+
+.logo {
+    font-family: 'DMSerifText-Regular', serif;
+}
+
+.scrollable {
+    --scrollbar-color-thumb: white;
+    --scrollbar-color-track: transparent;
+    --scrollbar-width: thin;
+    scrollbar-width: thin;
+}

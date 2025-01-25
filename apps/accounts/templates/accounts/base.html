@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %} | Real estate CRM platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_down">
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+</head>
+<body>
+	<article class="flex justify-between">
+	   {% block body %}{% endblock %}
+	    <article class="flex h-screen auth-panel w-1/3">
+			<article class="mt-auto inline-block align-text-bottom">
+				<section class="mx-6">
+					<p class="text-lg">
+						“Switching to Jocoss boosted our support team's productivity
+						by 40% and enabled a 6x faster issue resolution for our users .”
+					</p>
+					<p class="mb-28 mt-4 text-base">
+						Lucky Kgosiemang - Torch Research Solutions
+					</p>
+				</section>
+			</article>
+		</article>
+	</article>
+	{% block script %}
+	{% endblock %}
+</body>
+</html>

@@ -1,0 +1,111 @@
+{% extends 'marketing/base.html' %}
+
+{% block title %}Jocoss{% endblock %}
+
+{% block body %}
+    {# HERO SECTION BEGINS   #}
+    <div class="flex justify-center h-screen lg:mt-16 lg:mx-72">
+        <div class="text-center lg:mt-60">
+            <h1 class="lg:text-5xl lg:mb-8 lg:mx-36 md:text-xl">
+                Jocoss Client Relationship Management System. A modern interface for maximum productivity.
+            </h1>
+            <h2 class="text-gray-400 lg:text-2xl lg:mb-12 lg:mx-36">
+                Purpose-built from the ground up to make agents more successful. Everything you need to maximise your
+                time and investments.
+            </h2>
+            <a
+                    href="{% url 'accounts:user_register' %}"
+                    class="bg-white lg:py-3 lg:px-7 lg:text-2xl text-black rounded-lg"
+            >
+                Start 14-day trial
+            </a>
+            <div class="cursor-pointer scroll-trigger lg:mt-48">
+                <p>Learn more</p>
+                <span class="material-symbols-outlined">keyboard_arrow_down</span>
+            </div>
+        </div>
+    </div>
+    {# HERO SECTION ENDS #}
+
+    {# FEATURES SECTION BEGINS   #}
+    <div id="features" class="flex justify-center h-screen transition-all duration-300">
+        <div class="text-center lg:mt-60">
+            <h1 class="font-black lg:text-5xl lg:mb-4 lg:mx-36">
+                Great businesses don't just happen
+            </h1>
+            <h2 class="lg:text-2xl text-gray-400 lg:mb-12 lg:mx-36">
+                You build them with flexible systems that scale as you grow.
+            </h2>
+
+            <div class="flex lg:mx-48 justify-between">
+                <div class="w-1/3 text-left bg-pricing-card lg:text-2xl rounded-lg lg:py-10 lg:px-10 lg:mx-3">
+                    <h1 class="lg:text-3xl lg:mb-5">
+                        Organise
+                    </h1>
+                    <p class="lg:text-lg text-gray-300">
+                        Get all your leads and contacts in one place. Whether you're working alone, in a small team, or
+                        with a large organisation. Jocoss turns chaos into calm and order so you can focus on delivering
+                        for your clients.
+                    </p>
+                </div>
+                <div class="w-1/3 text-left bg-pricing-card lg:text-2xl rounded-lg lg:py-10 lg:px-10 lg:mx-3">
+                    <h1 class="lg:text-3xl lg:mb-5">
+                        Engage
+                    </h1>
+                    <p class="lg:text-lg text-gray-300">
+                        Make it easy to follow up with the right leads at the right time. Automate personalised emails,
+                        texts, and calls for all your prospects, so you can focus on your hottest, high-potential
+                        leads.
+                    </p>
+                </div>
+                <div class="w-1/3 text-left bg-pricing-card lg:text-2xl rounded-lg lg:py-10 lg:px-10 lg:mx-3">
+                    <h1 class="lg:text-3xl lg:mb-5">
+                        Listing Management
+                    </h1>
+                    <p class="lg:text-lg text-gray-300">
+                        Get all your leads and contacts in one place. Whether you're working alone, in a small team or
+                        with a large organisation. Jocoss turns chaos into calm and order so you can focus on delivering
+                        for your clients.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# FEATURES SECTION ENDS #}
+
+    {# CTA SECTION BEGINS #}
+    <div class="flex justify-center bg-gray-300">
+        <div class="text-center lg:my-20">
+            <h1 class="text-black font-black lg:text-5xl lg:mb-10">Start your 14-day trial with a money-back
+                guarantee</h1>
+            <a
+                    href="{% url 'accounts:user_register' %}"
+                    class="bg-black lg:py-3 lg:px-7 lg:text-4xl text-white rounded-lg"
+            >
+                Start 14-day trial
+            </a>
+        </div>
+    </div>
+    {# CTA SECTION ENDS #}
+
+    {# PRICING SECTION BEGINS #}
+    <div class="flex h-screen justify-center lg:mt-16 lg:mb-12 lg:mx-72">
+        {% include 'marketing/components/pricing_details.html' %}
+    </div>
+    {# PRICING SECTION ENDS #}
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        document.querySelector('.scroll-trigger').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetElement = document.querySelector('#features');
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: "smooth",
+                });
+            }
+        });
+    </script>
+{% endblock %}

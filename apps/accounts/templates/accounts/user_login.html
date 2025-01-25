@@ -1,0 +1,72 @@
+{% extends 'accounts/base.html' %}
+{% block title %}Sign in{% endblock %}
+
+{% block body %}
+    <section class="h-screen lg:w-2/3">
+        <section class="lg:mx-48 lg:mt-4">
+            <a href="/" class="logo lg:text-3xl"
+               title="The Johannesburg Communication Software Systems Company">jocoss</a>
+        </section>
+
+        <article class="lg:mt-12">
+            <section class="flex justify-center">
+                <form method="post" action="{% url 'accounts:user_login' %}">
+                    {% csrf_token %}
+                    <h1 class="lg:text-5xl">Sign in</h1>
+
+
+                    {% for field in form %}
+                        {% if form.errors %}
+                            <span class="text-red-500 lg:text-sm">{{ field.errors }}</span>
+                        {% endif %}
+
+                        {% if field.label == "Email" %}
+                            <div class="lg:mt-24">
+                                {% if messages  %}
+                                    {% for message in messages %}
+                                    <div>
+                                        {% if message.tags == 'success' %}
+                                            <span class="text-green-400 lg:text-lg font-medium lg:py-1 rounded-md">{{ message }}</span>
+                                        {% elif message.tags == 'error' %}
+                                            <span class="text-red-500 lg:text-lg font-medium lg:py-1 rounded-md">{{ message }}</span>
+                                        {% endif %}
+                                    </div>
+                                    {% endfor %}
+                                {% endif %}
+                            
+                                {% if form.errors %}
+                                    <div>
+                                        <span class="bg-red-400 text-black lg:text-sm font-medium lg:px-3 lg:py-1 rounded-md lg:my-3">{{ form.error_messages.invalid_login }}</span>
+                                    </div>
+                                {% endif %}
+                                <label class="lg:text-sm" for="{{ field.id }}">{{ field.label }}</label> <br/>
+                                {{ field }}
+                                {% else %}
+                            </div>
+                            <div class="lg:mt-4">
+                                <label class="lg:text-sm" for="{{ field.id }}">{{ field.label }}</label> <br/>
+                                {{ field }}
+                                <p class="lg:text-sm my-4">
+                                    Forgot your password?
+                                    <a class="underline" href="{% url 'accounts:user_password_reset' %}">
+                                        Recover here</a>.
+                                </p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
+                    <button
+                            class="bg-white text-black lg:w-96 lg:text-sm lg:py-3 rounded-lg"
+                            type="submit"
+                    >
+                        Sign in
+                    </button>
+                    <p class="lg:text-sm text-center lg:mt-6">
+                        Don't have an account?
+                        <a class="underline" href="{% url 'accounts:user_register' %}">
+                            Sign up here</a>.</p>
+                </form>
+            </section>
+        </article>
+    </section>
+{% endblock %}

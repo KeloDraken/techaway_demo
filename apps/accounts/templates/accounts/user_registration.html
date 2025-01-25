@@ -1,0 +1,78 @@
+{% extends 'accounts/base.html' %}
+{% block title %}Registration{% endblock %}
+
+{% block body %}
+    <section class="h-screen lg:w-2/3">
+        <section class="lg:mx-48 lg:mt-4">
+            <a href="/static" class="logo lg:text-3xl"
+               title="The Johannesburg Communication Software Systems Company">jocoss</a>
+        </section>
+
+        <article class="lg:mt-12">
+            <section class="flex lg:mx-48">
+                <form method="post" action="{% url 'accounts:user_register' %}" class="lg:mb-16">
+                    {% csrf_token %}
+                    <h1 class="lg:text-4xl">Streamline your client interaction</h1>
+                    <h1 class="lg:text-lg text-gray-500 mt-2">
+                        Sign up to start your 14-day trial
+                    </h1>
+
+                    {% for field in form %}
+                        {% if field.label == "Name" %}
+                            <div class="lg:mt-16">
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <div>
+                                            {% if message.tags == 'success' %}
+                                                <span class="text-green-400 lg:text-lg font-medium lg:py-1 rounded-md">{{ message }}</span>
+                                            {% elif message.tags == 'error' %}
+                                                <span class="text-red-500 lg:text-lg font-medium lg:py-1 rounded-md">{{ message }}</span>
+                                            {% endif %}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+
+                                <label class="lg:text-sm" for="{{ field.id }}">{{ field.label }}</label> <br/>
+                                {{ field }}
+                                {% if form.errors %}
+                                    <span class="text-red-400 lg:text-sm">{{ field.errors }}</span>
+                                {% endif %}
+                            </div>
+                        {% else %}
+                            <div class="lg:mt-4">
+                                {% if not field.label == "Confirm Password" %}
+                                    <label class="lg:text-sm" for="{{ field.id }}">{{ field.label }}</label> <br/>
+                                {% endif %}
+                                {{ field }}
+                                {% if form.errors %}
+                                    <span class="text-red-400 lg:text-sm">{{ field.errors }}</span>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <button
+                            class="bg-white text-black lg:w-96 lg:text-sm lg:py-3 lg:mt-3 rounded-lg"
+                            type="submit"
+                    >
+                        Complete registration
+                    </button>
+                    <p class="lg:text-sm lg:mt-6">
+                        Already have an account?
+                        <a class="underline" href="{% url 'accounts:user_login' %}">
+                            Sign in here</a>.
+                    </p>
+
+                </form>
+            </section>
+        </article>
+    </section>
+{% endblock %}
+
+
+{% block script %}
+    <script>
+        function confirmPassword() {
+            document.querySelector("#confirm_password").value = document.querySelector("#password").value;
+        }
+    </script>
+{% endblock %}

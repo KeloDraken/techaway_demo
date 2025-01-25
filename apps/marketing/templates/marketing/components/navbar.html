@@ -1,0 +1,30 @@
+<nav
+    class="fixed top-0 w-full z-50 lg:h-16 bg-black"
+    aria-label="top navigation bar"
+>
+    <div class="flex items-center justify-between lg:mx-48 lg:mt-4">
+        <a href="/static" class="logo lg:text-3xl" title="The Johannesburg Communication Software Systems Company">jocoss</a>
+        <div>
+            <a href="#" class="lg:mr-8">
+                Features
+            </a>
+            <a href="{% url 'marketing:pricing' %}" class="lg:mr-8">
+                Pricing
+            </a>
+            <a href="#" class="lg:mr-8">
+                FAQ
+            </a>
+        </div>
+        <div>
+            <a href="{% url 'accounts:user_login' %}" class="lg:mr-8">
+                Sign in
+            </a>
+            <a
+                href="#"
+                class="text-black bg-white rounded-lg lg:mr-8 lg:px-4 lg:py-2"
+            >
+                View demo
+            </a>
+        </div>
+    </div>
+</nav>

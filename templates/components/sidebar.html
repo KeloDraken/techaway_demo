@@ -1,0 +1,55 @@
+<!-- Sidebar -->
+<aside id="sidebar" class="bg-black text-white flex-shrink-0 overflow-y-auto"
+       style="width: 256px; min-width: 200px; max-width: 400px;">
+    <a href="/" class="logo lg:px-5 lg:text-3xl"
+       title="The Johannesburg Communication Software Systems Company">jocoss</a>
+    <div class="lg:p-4">
+        <ul class="space-y-2">
+            <li>
+                    <span
+                            hx-get="{% url 'core:user_dashboard' %}"
+                            hx-swap="innerHTML"
+                            hx-target="#main"
+                            class="cursor-pointer block lg:py-2 lg:px-4 hover:bg-main rounded"
+                    >
+                        Dashboard
+                    </span>
+            </li>
+            <li>
+                    <span
+                            hx-get="{% url 'customers:get_customers' %}"
+                            hx-swap="innerHTML"
+                            hx-target="#main"
+                            class="cursor-pointer block lg:py-2 lg:px-4 hover:bg-main rounded"
+                    >
+                        Leads
+                    </span>
+            </li>
+            <li>
+                <a href="#" class="block lg:py-2 lg:px-4 hover:bg-main rounded">Tasks</a>
+            </li>
+            <li>
+                <a href="#" class="block lg:py-2 lg:px-4 hover:bg-main rounded">Calendar</a>
+            </li>
+            <li>
+                <a href="#" class="block lg:py-2 lg:px-4 hover:bg-main rounded">Campaigns</a>
+            </li>
+        </ul>
+        <div class="divider lg:mt-8"></div>
+        <h2 class="text-lg font-semibold lg:mt-8 lg:mb-2">From <span class="logo lg:text-xl">jocoss</span></h2>
+        <ul class="space-y-2">
+            <li>
+                <a href="#" class="block lg:py-2 lg:px-4 hover:bg-main rounded">Announcements</a>
+            </li>
+            <li>
+                <a href="#" class="block lg:py-2 lg:px-4 hover:bg-main rounded">Feedback</a>
+            </li>
+            <li>
+                <a href="#" class="block lg:py-2 lg:px-4 hover:bg-main rounded">Product Roadmap</a>
+            </li>
+        </ul>
+    </div>
+</aside>
+
+<!-- Resizer -->
+<div id="resizer" class="resizer"></div>

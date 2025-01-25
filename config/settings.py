@@ -21,7 +21,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Third-party apps
     "django_htmx",
+    # Our apps
+    "apps.accounts",
+    "apps.core",
+    "apps.marketing",
 ]
+
+AUTH_USER_MODEL = "accounts.User"
 
 MIDDLEWARE = [
     "django_htmx.middleware.HtmxMiddleware",
@@ -36,7 +42,7 @@ MIDDLEWARE = [
     "htmlmin.middleware.MarkRequestMiddleware",
 ]
 
-ROOT_URLCONF = 'core.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -54,7 +60,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'core.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
@@ -94,3 +100,6 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 HTML_MINIFY = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = "core:core_base_view"
+LOGOUT_REDIRECT_URL = "accounts:user_login"

@@ -1,0 +1,83 @@
+{% extends 'accounts/base.html' %}
+{% block title %}Registration{% endblock %}
+
+{% block body %}
+    <section class="h-screen w-2/3">
+        <section class="mx-48 mt-4">
+            <a href="/static" class="logo" title="The Johannesburg Communication Software Systems Company">jocoss</a>
+        </section>
+
+        <article class="mt-12">
+            <section class="flex mx-48">
+                <form method="post"  class="mb-16">
+                    <h1 class="text-4xl">$30/seat/month</h1>
+                    <h1 class="text-lg text-gray-500 mt-2">
+                        Get access to everything Jocoss has to offer. Check out the features <a href="#" class="underline">here</a>.
+                    </h1>
+
+                    <div class="mt-24">
+                        <label class="text-sm" for="name">
+                            Name on card
+                        </label>
+                        <br/>
+                        <input
+                                id="name"
+                                class="text-sm form-input-border mt-3 py-4 px-5 min-w-96 bg-black placeholder:text-gray-600 rounded-lg"
+                                type="text"
+                                placeholder="Name on card"
+                        />
+                    </div>
+                    <div class="mt-4">
+                        <label class="text-sm" for="card_number">
+                            Card number
+                        </label>
+                        <br/>
+                        <input
+                                id="card_number"
+                                class="text-sm form-input-border mt-3 py-4 px-5 min-w-96 bg-black placeholder:text-gray-600 rounded-lg"
+                                type="text"
+                                placeholder="Card number"
+                        >
+                    </div>
+                    <div class="flex mt-4">
+                        <div>
+                            <label class="text-sm" for="expiry_date">
+                                Expiry date
+                            </label>
+                            <br/>
+                            <input
+                                    id="expiry_date"
+                                    class="text-sm form-input-border mt-3 py-4 px-5 max-w-24 bg-black placeholder:text-gray-600 rounded-lg"
+                            >
+                        </div>
+                        <div>
+                            <label class="text-sm" for="cvv">
+                                CVV
+                            </label>
+                            <br/>
+                            <input
+                                    id="cvv"
+                                    class="text-sm form-input-border mt-3 py-4 px-5 max-w-24 bg-black placeholder:text-gray-600 rounded-lg"
+                                    placeholder="CVV"
+                            >
+                        </div>
+                    </div>
+                    <button
+                            class="bg-white text-black w-96 text-sm py-3 mt-3 rounded-lg"
+                            type="submit"
+                    >
+                        Start your 14-day trial
+                    </button>
+                    <p class="text-sm mt-6">
+                        By clicking "Start your 14-day trial", you agree to our
+                        <a class="underline" href="#">
+                            Terms of Service</a> and
+                        <a class="underline" href="#">
+                            Privacy Policy</a>.
+                    </p>
+
+                </form>
+            </section>
+        </article>
+    </section>
+{% endblock %}
